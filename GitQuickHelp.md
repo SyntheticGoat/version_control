@@ -122,7 +122,11 @@ git push -u origin main
 ```
 When using the **git push** command for the first time, Git Bash will require authorization with your GitHub account and link them.
 
-## Pushing and pulling
+## Cloning, pushing and pulling
+Create a copy of the remote repository on your machine:
+```sh
+git clone <GitHub repository URL>
+```
 Download the latest version of the remote repository and merge it with your local repository:
 ```sh
 git pull
@@ -132,3 +136,22 @@ Upload your local repository online and merge with the existing remote repositor
 git push
 ```
 Pushing and pulling may create merge conflicts which will require resolving, if same files are edited on both sides.
+
+## Pull requests:
+To make contributions to a different project, you should create a personal copy of the project, create a separate branch, and make the contribution there.
+
+1. On the GitHub page of the project, click **"Fork"** to create your copy of the original proect
+2. Clone your fork on your machine:
+```sh
+git clone <fork URL>
+```
+3. Create a separate branch:
+```sh
+git branch <new branch's name>
+```
+4. Make and commit your edits in that branch
+5. Push the changes to your fork:
+```sh
+git push --set-upstream origin <new branch's name>
+```
+6. Go to the fork's page. Select the branch that you have just worked in and click **"Compare & pull request"** to create the pull request.
